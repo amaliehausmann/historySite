@@ -1,0 +1,54 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.navStyling {
+  display: flex;
+  justify-content: center;
+  background-color: $black;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column-reverse;
+
+    li {
+      text-align: center;
+      padding: 1vw 0;
+
+      a {
+        display: inline-block;
+        font-size: 3vw;
+      }
+    }
+  }
+}
+
+.navLink {
+  text-decoration: none;
+  color: $graybeige;
+}
+
+.navLinkActive {
+  text-decoration: underline;
+  color: $beige;
+  text-shadow: $lightbrown 0.5px 0 0;
+}
+
+.light {
+  background-color: $white;
+
+  .navLink {
+    text-decoration: none;
+    color: $darkbrown;
+  }
+
+  .navLinkActive {
+    text-decoration: underline;
+    color: $darkbrown;
+    text-shadow: $darkbrown 0.5px 0 0;
+  }
+}

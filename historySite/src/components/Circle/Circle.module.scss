@@ -1,0 +1,41 @@
+@use '../../styles/placeholders' as *;
+@use '../../styles/variables' as *;
+
+.circle{
+    border-radius: 50%;
+}
+
+.topLeft{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.topRight{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.bottomRight{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.bottomLeft{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.headerSize{
+    width: 30px;
+    height: 30px;
+    background-color: $graybeige;
+    margin: 8px;
+}

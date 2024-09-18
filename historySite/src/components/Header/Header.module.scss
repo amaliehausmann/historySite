@@ -1,0 +1,232 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.headerStyling {
+  background: url("src/assets/hero.jpg") center / 1250px no-repeat;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .triangleLeft {
+    background-color: $graybeige;
+    width: 233px;
+    height: 166px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -15%;
+    left: -22%;
+  }
+
+  .triangleRight {
+    background-color: $graybeige;
+    width: 233px;
+    height: 166px;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: -15%;
+    right: -22%;
+  }
+
+  .headerBox {
+    position: absolute;
+    z-index: 100;
+    background-color: $black;
+    border: 24px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(
+      180deg,
+      rgba(199, 189, 141, 0.33) 0%,
+      rgba(210, 158, 98, 0.33) 100%
+    );
+
+    width: 80vw;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      color: $graybeige;
+      @extend %lindenhill;
+      font-size: 20px;
+      font-weight: 400;
+      text-align: center;
+      margin-top: 100px;
+      padding: 0 180px;
+    }
+
+    .heading {
+      display: flex;
+      justify-content: center;
+      input {
+        background: transparent;
+        border: none;
+        width: 180px;
+        @extend %limelight;
+        text-decoration: underline 2px;
+        text-underline-offset: 8px;
+        font-size: 64px;
+        color: $beige;
+        padding-left: 20px;
+        margin-bottom: 30px;
+        cursor: pointer;
+        height: 60px;
+        padding-top: 88px;
+
+        &::placeholder {
+          color: $beige;
+          font-size: 64px;
+          text-decoration: underline 2px;
+          text-underline-offset: 8px;
+          @extend %limelight;
+        }
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 64px;
+        @extend %limelight;
+        color: $graybeige;
+        font-weight: 400;
+        margin: 0 0 -20px;
+        padding-top: 80px;
+      }
+
+      .dateStyle {
+        display: flex;
+        border-bottom: 2px solid $beige;
+        margin-left: 20px;
+        padding-top: 2px;
+
+        p,
+        input {
+          font-size: 64px;
+          color: $beige;
+          @extend %limelight;
+          margin: 0;
+        }
+
+        p {
+          margin-bottom: -20px;
+          padding-top: 80px;
+        }
+
+        input {
+          width: 85px;
+          margin-bottom: -30px;
+          text-decoration: none;
+
+          &::placeholder {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    background-size: cover;
+    .triangleLeft {
+      top: -14%;
+      left: -13%;
+    }
+
+    .triangleRight {
+      top: -14%;
+      right: -13%;
+    }
+
+    .headerBox {
+      position: absolute;
+      height: 452px;
+      top: 520px;
+      z-index: 100;
+
+      h2 {
+        font-size: 32px;
+        margin-top: 50px;
+        padding: 0 270px;
+      }
+
+      .heading {
+        input {
+          width: 270px;
+          text-decoration: underline 4px;
+          font-size: 96px;
+          height: 90px;
+
+          &::placeholder {
+            font-size: 96px;
+            text-decoration: underline 4px;
+          }
+        }
+
+        h1 {
+          font-size: 96px;
+        }
+
+        .dateStyle {
+          p,
+          input {
+            font-size: 96px;
+          }
+
+          input {
+            width: 130px;
+            margin-bottom: -30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.light {
+  .triangleLeft {
+    background-color: $beige;
+  }
+
+  .triangleRight {
+    background-color: $beige;
+  }
+
+  .headerBox {
+    background-color: $white;
+    border: 24px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(
+      180deg,
+      rgba(31, 31, 31, 0.33) 0%,
+      rgba(105, 94, 72, 0.33) 100%
+    );
+
+    h2 {
+      color: $darkbrown;
+    }
+
+    .heading {
+      input {
+        color: $darkbrown;
+
+        &::placeholder {
+          color: $darkbrown;
+        }
+      }
+
+      h1 {
+        color: $darkbrown;
+      }
+
+      .dateStyle {
+        border-bottom: 2px solid $darkbrown;
+
+        p,
+        input {
+          color: $darkbrown;
+        }
+      }
+    }
+  }
+}
