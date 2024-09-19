@@ -32,7 +32,7 @@
   .headerBox {
     position: absolute;
     z-index: 100;
-    background-color: $black;
+    background-color: $extrablack;
     border: 24px solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(
@@ -143,6 +143,7 @@
       height: 452px;
       top: 520px;
       z-index: 100;
+      width: 1000px;
 
       h2 {
         font-size: 32px;

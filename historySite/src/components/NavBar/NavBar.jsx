@@ -1,10 +1,7 @@
 import { NavLink } from "react-router-dom";
 import style from "./NavBar.module.scss";
 
-
 export function NavBar({ theme }) {
-
-
   return (
     <nav className={`${style.navStyling} ${style[theme]}`}>
       <ul>
@@ -33,9 +30,9 @@ export function NavBar({ theme }) {
             className={({ isActive }) =>
               isActive ? `${style.navLinkActive}` : style.navLink
             }
-            to={"/since"}
+            to={"/about"}
           >
-            SINCE
+            ABOUT
           </NavLink>
         </li>
       </ul>

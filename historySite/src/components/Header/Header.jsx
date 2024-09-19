@@ -6,12 +6,12 @@ export function Header({
   title = "header mangler",
   underTitle = "Undertitle mangler",
   withDate,
-  withYear,
   theme,
+  setDay,
+  setMonth 
 }) {
   const [currentDay, setCurrentDay] = useState("");
   const [currentMonth, setCurrentMonth] = useState("");
-  const [currentYear, setCurrentYear] = useState("");
 
   useEffect(() => {
     const today = new Date();
@@ -19,8 +19,9 @@ export function Header({
     const paddedMonth = String(today.getMonth() + 1).padStart(2, "0");
     setCurrentDay(paddedDay);
     setCurrentMonth(paddedMonth);
-    setCurrentYear(today.getFullYear());
-  }, []);
+    setDay(paddedDay);
+    setMonth(paddedMonth);
+  }, [setDay, setMonth]);
 
   const handleDayChange = (e) => {
     const value = e.target.value;
@@ -36,11 +37,16 @@ export function Header({
     }
   };
 
-  const handleYearChange = (e) => {
-    const value = e.target.value;
-    if (/^\d{0,4}$/.test(value)) {
-      setCurrentYear(value);
-    }
+  const handleDayBlur = () => {
+    const paddedDay = String(currentDay).padStart(2, "0");
+    setCurrentDay(paddedDay);
+    setDay(paddedDay);
+  };
+
+  const handleMonthBlur = () => {
+    const paddedMonth = String(currentMonth).padStart(2, "0");
+    setCurrentMonth(paddedMonth);
+    setMonth(paddedMonth);
   };
 
   return (
@@ -58,6 +64,7 @@ export function Header({
                 placeholder={currentDay}
                 maxLength={2}
                 onChange={handleDayChange}
+                onBlur={handleDayBlur}
               />
               <p>/</p>
               <input
@@ -66,17 +73,9 @@ export function Header({
                 placeholder={currentMonth}
                 maxLength={2}
                 onChange={handleMonthChange}
+                onBlur={handleMonthBlur}
               />
             </div>
-          )}
-          {withYear && (
-            <input
-              type="text"
-              value={currentYear}
-              placeholder={currentYear}
-              maxLength={4}
-              onChange={handleYearChange}
-            />
           )}
         </div>
         <h2>{underTitle}</h2>

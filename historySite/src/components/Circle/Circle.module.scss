@@ -1,41 +1,81 @@
-@use '../../styles/placeholders' as *;
-@use '../../styles/variables' as *;
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
 
-.circle{
-    border-radius: 50%;
+.circle {
+  border-radius: 50%;
 }
 
-.topLeft{
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
+.topLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 
-.topRight{
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
+.topRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
 }
 
-.bottomRight{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
+.bottomRight {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
-.bottomLeft{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
+.bottomLeft {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
-.headerSize{
-    width: 30px;
-    height: 30px;
-    background-color: $graybeige;
-    margin: 8px;
+.headerSize {
+  width: 30px;
+  height: 30px;
+  background-color: $graybeige;
+  margin: 8px;
+}
+
+.topCircle {
+  position: absolute;
+  right: 80px;
+  top: 50px;
+
+  @media screen and (min-width: 1025px){
+    right: 46.5%;
+    top: -0.1%;
+  }
+}
+
+.bigCircle {
+  background-color: $graybeige;
+  width: 62px;
+  height: 62px;
+}
+
+.lineCircle {
+  position: absolute;
+  right: 95px;
+  transform: translatey(-22px);
+
+  @media screen and (min-width: 1025px){
+    right: 47.5%;
+  }
+}
+
+.smallCircle {
+  width: 25px;
+  height: 25px;
+  background-color: $extrablack;
+  border: 4px solid $graybeige;
+}
+
+.light {
+  width: 25px;
+  height: 25px;
+  background-color: $white;
 }

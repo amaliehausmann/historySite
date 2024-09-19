@@ -1,0 +1,174 @@
+@use "../../styles/placeholders" as *;
+@use "../../styles/variables" as *;
+
+.timelineStyling {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .scrollArrow {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $extrablack;
+    bottom: 0;
+    right: 16px;
+    z-index: 999;
+
+    p {
+      color: $white;
+      @extend %lindenhill;
+      font-size: 24px;
+    }
+
+    img {
+      width: 63px;
+      filter: brightness(0) saturate(100%) invert(85%) sepia(11%) saturate(884%)
+        hue-rotate(12deg) brightness(89%) contrast(84%);
+    }
+  }
+
+  .timelineCards {
+    text-align: right;
+    border-right: 4px solid $graybeige;
+    margin: auto;
+    margin-right: 110px;
+    padding-bottom: 200px;
+
+    &:nth-child(3) {
+      padding-top: 100px;
+    }
+
+    h3 {
+      margin-right: 170px;
+      position: relative;
+      color: $white;
+      @extend %lindenhill;
+      font-weight: 400;
+    }
+
+    h3::after {
+      content: "";
+      position: absolute;
+      left: 540px;
+      bottom: -16px;
+      width: 200px;
+      height: 4px;
+      background-color: $graybeige;
+    }
+
+    p {
+      margin-right: 250px;
+      color: $white;
+      @extend %lindenhill;
+      font-size: 24px;
+      min-width: 387px;
+      padding-left: 100px;
+    }
+
+    a {
+      font-size: 24px;
+      color: white;
+      margin-right: 250px;
+      @extend %lindenhill;
+    }
+
+    img {
+      width: 37px;
+      vertical-align: -10px;
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    .scrollArrow {
+      right: 42%;
+    }
+
+    .timelineCards {
+      p {
+        max-width: 424px;
+      }
+      &:nth-child(even) {
+        text-align: right;
+        border-right: 4px solid $graybeige;
+        border-left: none;
+        margin-right: 51vw;
+      }
+
+      &:nth-child(odd) {
+        text-align: left;
+        border-left: 4px solid $graybeige;
+        border-right: none;
+        margin-left: 51.2vw;
+
+        h3 {
+          margin-left: 180px;
+        }
+
+        h3::after {
+          left: -180px;
+          bottom: -16px;
+          width: 200px;
+          height: 4px;
+          background-color: $graybeige;
+        }
+
+        p {
+          margin-left: 160px;
+        }
+
+        .linkStyling {
+          display: flex;
+          flex-direction: row-reverse;
+
+          img {
+            transform: translateX(-190px);
+          }
+
+          a {
+            margin-left: 20px;
+            display: inline-block;
+            transform: translateX(60px);
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.light {
+  .scrollArrow {
+    background-color: $white;
+
+    p {
+      color: $extrablack;
+    }
+
+    img {
+      filter: brightness(0) saturate(100%) invert(0%) sepia(4%) saturate(1114%)
+        hue-rotate(341deg) brightness(94%) contrast(84%);
+    }
+  }
+
+  .timelineCards {
+    h3 {
+      color: $extrablack;
+    }
+
+    p {
+      color: $extrablack;
+    }
+
+    a {
+      color: $extrablack;
+    }
+
+    img {
+      filter: brightness(0) saturate(100%) invert(0%) sepia(4%) saturate(1114%)
+        hue-rotate(341deg) brightness(94%) contrast(84%);
+    }
+  }
+}
