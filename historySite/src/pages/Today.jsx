@@ -29,7 +29,7 @@ export function Today() {
 
   const events = data && data.events ? data.events : [];
 
-  return (
+  return ( 
     <div>
       <PageTitle pageTitle="Today"></PageTitle>
       <Header

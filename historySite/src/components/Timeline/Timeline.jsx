@@ -65,7 +65,7 @@ export function Timeline({
   }
 
   return (
-    <div className={`${style.timelineStyling} ${theme}`}>
+    <div className={`${style.timelineStyling} ${style[theme]}`}>
       <Button action={action} theme={theme} buttonStyling="themeSwitch">
         <img src="../src/assets/Light.svg" alt="lightbulb icon" />
       </Button>
