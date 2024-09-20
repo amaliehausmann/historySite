@@ -41,7 +41,7 @@ export function Timeline({ events = [], action, theme }) {
         setShowBackToTop(false);
       }
 
-      //Viser back to top knap hvis scrolled mere end 17%
+      //Viser scroll down hvis scrolled mere end 17%
       if (scrollPosition > documentHeight * 0.17) {
         setShowScrollDown(true);
       } else {
