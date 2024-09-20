@@ -8,11 +8,13 @@ export function Header({
   withDate,
   theme,
   setDay,
-  setMonth 
+  setMonth,
 }) {
+  // usestates
   const [currentDay, setCurrentDay] = useState("");
   const [currentMonth, setCurrentMonth] = useState("");
 
+  //   useeffect som kører når setDay eller setMonth opdateres
   useEffect(() => {
     const today = new Date();
     const paddedDay = String(today.getDate()).padStart(2, "0");
@@ -23,6 +25,7 @@ export function Header({
     setMonth(paddedMonth);
   }, [setDay, setMonth]);
 
+  //   Sørger for at man kun kan skrive tal i inputfeltet + at inputtet bliver settet som currentDay
   const handleDayChange = (e) => {
     const value = e.target.value;
     if (/^\d{0,2}$/.test(value)) {
@@ -30,6 +33,7 @@ export function Header({
     }
   };
 
+  //   Sørger for at man kun kan skrive tal i inputfeltet + at inputtet bliver settet som currentMonth
   const handleMonthChange = (e) => {
     const value = e.target.value;
     if (/^\d{0,2}$/.test(value)) {
@@ -37,12 +41,14 @@ export function Header({
     }
   };
 
+  //   Sørger for at setDay bliver padded når inputtet er ude af fokus
   const handleDayBlur = () => {
     const paddedDay = String(currentDay).padStart(2, "0");
     setCurrentDay(paddedDay);
     setDay(paddedDay);
   };
 
+  //   Sørger for at setMonth bliver padded når inputtet er ude af fokus
   const handleMonthBlur = () => {
     const paddedMonth = String(currentMonth).padStart(2, "0");
     setCurrentMonth(paddedMonth);

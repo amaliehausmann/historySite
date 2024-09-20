@@ -3,12 +3,7 @@ import { Button } from "../Button/Button";
 import style from "./Timeline.module.scss";
 import { Circle } from "../Circle/Circle";
 
-export function Timeline({
-  events = [],
-  action,
-  theme,
-}) {
-
+export function Timeline({ events = [], action, theme }) {
   // Sorterer events så det laveste år står øverst
   const sortedEvents = events.sort((a, b) => a.year - b.year);
 
@@ -46,12 +41,14 @@ export function Timeline({
         setShowBackToTop(false);
       }
 
+      //Viser back to top knap hvis scrolled mere end 17%
       if (scrollPosition > documentHeight * 0.17) {
         setShowScrollDown(true);
       } else {
         setShowScrollDown(false);
       }
 
+      //   Tilføjer 10 til visible amount når man når bunden af siden
       if (windowHeight + scrollPosition >= documentHeight) {
         setVisibleAmount((prev) => prev + 10);
       }
@@ -60,6 +57,7 @@ export function Timeline({
     window.addEventListener("scroll", handleScroll);
   }, []);
 
+  //   smooth scroll
   function scrollToTop() {
     window.scrollTo({ top: 100, behavior: "smooth" });
   }
@@ -94,18 +92,18 @@ export function Timeline({
             ></Circle>
             <p>{event.text}</p>
             <div className={style.linkStyling}>
-            <img src="../src/assets/Bookmark.svg" alt="" />
-            <a
-              href={event.pages[0].content_urls.desktop.page}
-              target="_blank"
-            >
-              Read More
-            </a>
+              <img src="../src/assets/Bookmark.svg" alt="" />
+              <a
+                href={event.pages[0].content_urls.desktop.page}
+                target="_blank"
+              >
+                Read More
+              </a>
             </div>
           </div>
         ))
       ) : (
-        <p>No events available.</p>
+        <p></p>
       )}
     </div>
   );

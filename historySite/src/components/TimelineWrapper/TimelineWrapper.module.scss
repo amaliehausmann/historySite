@@ -6,23 +6,23 @@
   padding-bottom: 100px;
 }
 
-.topBox{
-    width: 100%;
-    height: 20px;
-    background-color: $black;
+.topBox {
+  width: 100%;
+  height: 20px;
+  background-color: $black;
 }
 
-@media screen and (min-width: 1025px){
-    .topBox{
-        height: 30px;
-        margin-bottom: 100px;
-    }
+@media screen and (min-width: 1025px) {
+  .topBox {
+    height: 30px;
+    margin-bottom: 100px;
+  }
 }
 
 .light {
   background-color: $white;
 
-  .topBox{
+  .topBox {
     background-color: $darkbrown;
-}
+  }
 }

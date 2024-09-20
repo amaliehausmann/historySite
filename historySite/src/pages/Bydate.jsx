@@ -19,7 +19,6 @@ export function Bydate() {
     queryKey: ["historyByDate", month, day],
     queryFn: () => fetch(url).then((res) => res.json()),
     staleTime: 1000 * 600,
-    enabled: !!day && !!month,
   });
 
   const events = data && data.events ? data.events : [];

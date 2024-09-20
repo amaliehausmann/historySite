@@ -17,19 +17,18 @@ export function Today() {
   const thisDate = String(today.getDate()).padStart(2, "0");
   const thisMonth = String(today.getMonth() + 1).padStart(2, "0");
 
-
   const url = `https://api.wikimedia.org/feed/v1/wikipedia/en/onthisday/events/${thisMonth}/${thisDate}`;
 
   const { data } = useQuery({
     queryKey: ["historyToday", thisMonth, thisDate],
     queryFn: () => fetch(url).then((res) => res.json()),
     staleTime: 1000 * 600,
-    enabled: !!thisDate && !!thisMonth,
   });
 
+  //   Sørger for at events altid er et array
   const events = data && data.events ? data.events : [];
 
-  return ( 
+  return (
     <div>
       <PageTitle pageTitle="Today"></PageTitle>
       <Header

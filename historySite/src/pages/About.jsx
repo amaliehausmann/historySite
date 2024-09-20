@@ -13,7 +13,7 @@ export function About() {
 
   return (
     <div>
-      <PageTitle pageTitle="Since"></PageTitle>
+      <PageTitle pageTitle="About"></PageTitle>
       <Header
         setDay={setDay}
         setMonth={setMonth}
